@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>begggummmm</title>
+  <!-- Urbanist Font Yüklemesi -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Urbanist:wght@400;500;600;700&display=swap" rel="stylesheet">
+  
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      background-color: #fde8f3; /* Attığınız görseldeki açık pembe */
+      font-family: 'Urbanist', sans-serif;
+      color: #9d174d; /* Koyu pembe yazı rengi */
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      padding: 20px;
+    }
+
+    .container {
+      max-width: 600px;
+      width: 100%;
+    }
+
+    .page {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 32px;
+    }
+
+    .hidden {
+      display: none;
+    }
+
+    .text {
+      font-size: 2rem;
+      font-weight: 600;
+      line-height: 1.4;
+      letter-spacing: -0.02em;
+    }
+
+    .clickable {
+      font-size: 1.5rem;
+      font-weight: 700;
+      text-transform: lowercase;
+      cursor: pointer;
+      text-decoration: underline;
+      text-underline-offset: 6px;
+      user-select: none;
+      transition: opacity 0.2s ease;
+    }
+
+    .clickable:hover {
+      opacity: 0.8;
+    }
+
+    /* Mobil cihazlar için yazı boyutu ayarı */
+    @media (max-width: 480px) {
+      .text {
+        font-size: 1.5rem;
+      }
+      .clickable {
+        font-size: 1.25rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <!-- Sayfa 1 -->
+    <div id="page1" class="page">
+      <p class="text">fistik seni seviyorum bunu boyle bir sey hazirlayarak soylemek istedim 😉</p>
+      <span class="clickable" onclick="nextPage()">tıkla</span>
+    </div>
+
+    <!-- Sayfa 2 -->
+    <div id="page2" class="page hidden">
+      <p class="text">ruby guzelim bu sarki sana</p>
+      <span class="clickable" onclick="openSong()">tıkla</span>
+    </div>
+  </div>
+
+  <script>
+    function nextPage() {
+      document.getElementById('page1').classList.add('hidden');
+      document.getElementById('page2').classList.remove('hidden');
+    }
+
+    function openSong() {
+      window.open('https://youtu.be/qFX-S5zHmqQ?si=_JrRo64IRnz0nY-V', '_blank');
+    }
+  </script>
+
+</body>
+</html>
